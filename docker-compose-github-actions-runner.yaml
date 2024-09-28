@@ -1,0 +1,15 @@
+version: '2.3'
+services:
+  worker:
+    image: myoung34/github-runner:latest
+    environment:
+      REPO_URL: https://github.com/shurkys/opennebula-arm64
+      RUNNER_NAME: arm64
+      RUNNER_TOKEN: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+      RUNNER_WORKDIR: /tmp/runner/work
+      LABELS: linux,arm64
+    security_opt:
+      - label:disable
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/tmp/runner:/tmp/runner'

@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  opennebula:
+    image: shurkys/opennebula-all-in-one:v0.0.1
+    container_name: opennebula
+    hostname: opennebula
+    ports:
+      - "2633:2633"
+      - "4124:4124"
+      - "2101:2101"
+      - "2616:2616"
+      - "9869:9869"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    privileged: true
