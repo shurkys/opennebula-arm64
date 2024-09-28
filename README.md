@@ -16,6 +16,8 @@ To run OpenNebula using Docker, execute the following command on your Mac with a
 
 ```bash
 docker-compose up
+# Get login/password
+docker exec -ti opennebula cat .one/one_auth
 ```
 ## Notes
 
